@@ -10,6 +10,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {FirstpagePage} from "../pages/firstpage/firstpage";
+import {SecondPage} from "../pages/second/second";
 
 @NgModule({
   declarations: [
@@ -17,11 +19,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    FirstpagePage,
+    SecondPage
+
+
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,)
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,7 +36,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    FirstpagePage,
+    SecondPage
+
+
   ],
   providers: [
     StatusBar,

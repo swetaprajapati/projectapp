@@ -6,12 +6,104 @@
 
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+
+
+
+
+
+  <button ion-button (click) = "gotosecondpage()">gotosecond</button>
+
+  <ion-icon name="person"></ion-icon>
+
+
+
+
+
+  <ion-icon name="thumbs-up"></ion-icon>
+
+
+  <ion-icon name="tablet-portrait"></ion-icon>
+
+
+  <ion-list>
+
+
+
+  <ion-item>
+
+
+    <ion-label  floating><ion-icon name="contact"></ion-icon>Username</ion-label>
+    <ion-input [(ngModel)]="username" type="text" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label floating><ion-icon name="finger-print"></ion-icon>Password</ion-label>
+    <ion-input [(ngModel)]="password"  type="password" value=""></ion-input>
+
+
+
+  </ion-item>
+
+  </ion-list>
+
+
+
+
+
+  <div padding>
+    <button ion-button color="secondary" block (click)="login()">Sign In</button>
+  </div>
+
+
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of comment; let i=index ;">
+      <ion-row >
+        <p>{{item}}</p>
+
+
+        <button ion-button [color]= "secondary" (click)="delete(i)" >DELETE</button>
+      </ion-row>
+
+    </ion-item>
+  </ion-list>
+
+  <ion-input type="text"  [(ngModel)]="addcomment"  ></ion-input>
+  <button ion-button (click)="addcomments()">ADD</button>
+
+
+
+  <!--students data -->
+  <ion-list>
+    <ion-item *ngFor="let item of students">
+      <ion-row>
+
+     <p>{{item.name}}</p>
+    <p>{{item.batch}}</p>
+    <p>{{item.year}}</p>
+       </ion-row>
+
+    </ion-item>
+
+
+
+  </ion-list>
+  <ion-list>
+    <ion-item>
+
+  <ion-label  floating><ion-icon name="contact"></ion-icon>Enter your details</ion-label></ion-item>
+  <ion-item><ion-input type="text" [(ngModel)]="student_name" ></ion-input></ion-item>
+    <ion-item><ion-input type="text" [(ngModel)]="student_batch"></ion-input></ion-item>
+      <ion-item><ion-input type="text" [(ngModel)]="student_year"></ion-input></ion-item>
+
+
+<button ion-button (click)="addstudent()">ADD IN LIST</button>
+</ion-list>
+
+
+
+
 </ion-content>
