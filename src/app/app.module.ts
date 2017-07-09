@@ -7,11 +7,13 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {FirstpagePage} from "../pages/firstpage/firstpage";
 import {SecondPage} from "../pages/second/second";
+import { DatafetchProvider } from '../providers/datafetch/datafetch';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -27,8 +29,8 @@ import {SecondPage} from "../pages/second/second";
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp,)
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,7 +47,10 @@ import {SecondPage} from "../pages/second/second";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatafetchProvider,
+    Geolocation
+
   ]
 })
 export class AppModule {}

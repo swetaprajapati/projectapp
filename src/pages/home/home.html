@@ -4,8 +4,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+<ion-content padding class="image">
+  <h2>PROJECT APP</h2>
 
 
 
@@ -53,8 +53,16 @@
 
 
   <div padding>
-    <button ion-button color="secondary" block (click)="login()">Sign In</button>
+    <button ion-button color="secondary" block (click)="setdata()">Sign In</button>
   </div>
+
+  <div padding>
+    <button ion-button color="danger" block (click)="geolocate()" >SHOW LOCATION</button>
+    <p>{{latitude}}</p>
+    <p>{{longitude}}</p>
+  </div>
+
+
 
 
 
@@ -77,13 +85,14 @@
 
 
   <!--students data -->
+
   <ion-list>
-    <ion-item *ngFor="let item of students">
+    <ion-item *ngFor="let item of study">
       <ion-row>
 
      <p>{{item.name}}</p>
-    <p>{{item.batch}}</p>
-    <p>{{item.year}}</p>
+    <p>{{item.institute}}</p>
+    <p>{{item.Year}}</p>
        </ion-row>
 
     </ion-item>
@@ -91,6 +100,7 @@
 
 
   </ion-list>
+
   <ion-list>
     <ion-item>
 
